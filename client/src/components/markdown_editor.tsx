@@ -93,7 +93,7 @@ export function MarkdownEditor({ content, setContent, placeholder = "> Write you
           onChange={upChange}
           className="hidden"
           type="file"
-          accept="image/gif,image/jpeg,image/jpg,image/png"
+          accept="image/gif,image/jpeg,image/jpg,image/png,image/webp,image/avif,image/svg+xml"
         />
         <i className="ri-image-add-line" />
       </button>
