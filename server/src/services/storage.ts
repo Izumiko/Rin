@@ -14,7 +14,7 @@ export function StorageService(router: Router): void {
     router.group('/storage', (group) => {
         // POST /storage
         group.post('/', async (ctx: Context) => {
-            const { uid, set, body, store: { env } } = ctx;
+            const { admin, set, body, store: { env } } = ctx;
             const { key, file } = body;
             
             const endpoint = env.S3_ENDPOINT;
@@ -41,7 +41,7 @@ export function StorageService(router: Router): void {
                 set.status = 500;
                 return 'S3_BUCKET is not defined';
             }
-            if (!uid) {
+            if (!admin) {
                 set.status = 401;
                 return 'Unauthorized';
             }
